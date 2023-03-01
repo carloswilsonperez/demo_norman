@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "ab@gmail.com",
+      "password": "12345",
+      "balance": "18",
+      "id": 0
+    },
+    {
+      "id": 1,
+      "email": "dfdf@gmail.com",
+      "password": "John Doe",
+      "balance": 0
+    },
+    {
+      "id": 2,
+      "email": "dfdf@gmail.com",
+      "password": "Denzel Washington",
+      "balance": 10
+    }
+  ]
+}
