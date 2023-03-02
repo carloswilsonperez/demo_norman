@@ -56,7 +56,7 @@ app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 let currentUser = undefined;
 
 app.get("/", function (req, res) {
-  res.render("index");
+  res.render("index", { error: false });
 });
 
 //Handling user login
@@ -71,15 +71,17 @@ app.post("/info", async function(req, res){
         currentUser = user;
         const result = req.body.password === user.password;
         if (result) {
-          res.render("user", {user: user});
+          res.render("user", { user: user });
         } else {
           res.status(400).json({ error: "Password doesn't match" });
         }
       } else {
-        res.status(400).json({ error: "User doesn't exist" });
+        res.status(400).render("index", { error: "User doesn't exist" });
+        //res.status(400).json({ error: "User doesn't exist" });
       }
     } catch (error) {
-      res.status(400).json({ error });
+      res.status(400).render("index", { error: "Try again later" });
+      //res.status(400).json({ error });
     }
 });
 
