@@ -5,3 +5,9 @@ img {
 .jumbotron {
     background-color: white;
 }
+
+button {
+    font-size: 30px;
+    font-weight: 800 !important;
+    width: 150px;
+}
